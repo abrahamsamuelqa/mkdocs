@@ -2,9 +2,15 @@
 
 
 ## Installation
+
+Clone the repo contents to a folder
+```sh
+# Open terminal in the folder containing Dockerfile
+```
+
 Creating docker image  
 ```sh
-#make build_image
+# $ docker build -t mkdoc:v1 .
 
  ---> ce6df3a2aa02
 Step 3/6 : WORKDIR /docs
@@ -27,7 +33,7 @@ Successfully built 6030d511bbf3
 Successfully tagged mkdoc:v1
 ```
 
-Place project files in local directory
+Remove and place the files of "setup" folder in your local directory
 ```sh
 #example 
 ${pwd} = /home/test/mkdoc
@@ -36,7 +42,7 @@ ${pwd} = /home/test/mkdoc
 starting container
 
 ```sh
-#make up
+#
 docker run -d --rm -p 8000:8000 -v ${pwd}:/docs --name mkDocs mkdoc:v1
 7a3cccdf89ecf7b60e4a5e25c662be44ac58b7487e9fd2fe160a44c250fc4fa9
 ```
